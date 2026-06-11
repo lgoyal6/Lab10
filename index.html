@@ -42,6 +42,25 @@
       <audio class="hidden" src=""></audio>
     </section>
   </main>
+
+  <script>
+    // A/B test: randomly apply the "blue" class to ~50% of visitors
+    const randomNumber = Math.random();
+    const shouldApplyClass = randomNumber < 0.5;
+    let body = document.querySelector('body');
+    if (shouldApplyClass) {
+      body.classList.add('blue');
+    }
+  </script>
+
+  <!-- Google Analytics (gtag.js) -- replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </body>
 
 </html>
